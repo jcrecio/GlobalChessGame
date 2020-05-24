@@ -13,7 +13,7 @@ services:
         ports:
             - "4018:4018"
         volumes:
-            - ./engine:/restapi/engine
+            - ./engine:/engine
         depends_on:
             - database
     ng-client:
