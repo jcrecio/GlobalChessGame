@@ -34,7 +34,7 @@ docker push <your rest api python image path>:latest
 Then replace in the *docker-compose.yml* the image *jcrecio/jkchess-restapi:latest* by your own image.
 
 ### Image of the Angular Client
-If you want to modify and try new things on your own, you can recreate images in your own dockerhub by running these commands cloning the angular ui client repository [ngJkChess](https://github.com/jcrecio/ngJkChess):
+If you want to modify and try new things on your own, you can recreate images in your own dockerhub by running these commands cloning the angular ui client repository [jkChess-ng-client](https://github.com/jcrecio/ngJkChess):
 ```
 docker build -t <your angular image path>:latest -f ./Dockerfile .
 docker push <your angular image path>:latest
