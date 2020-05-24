@@ -7,8 +7,8 @@ volumes:
         driver: local
 
 services:
-    restapi:
-        image: "jcrecio/globalchess-restapi:latest"
+    rest-api:
+        image: "jcrecio/jkchess-rest-api:latest"
         command: flask run --host=0.0.0.0
         ports:
             - "4018:4018"
@@ -16,14 +16,14 @@ services:
             - ./engine:/restapi/engine
         depends_on:
             - database
-    uiclient:
-        image: "jcrecio/globalchess-uiclient:latest"
+    ng-client:
+        image: "jcrecio/jkchess-ng-client:latest"
         command: > 
             bash -c "npm install && ng serve --host 0.0.0.0 --port 4019"        
         ports:
             - "4019:4019"
         volumes:
-            - './uiclient:/usr/src/app'
+            - './ng-client:/usr/src/app'
     database:
         image: mongo:latest
         ports:
